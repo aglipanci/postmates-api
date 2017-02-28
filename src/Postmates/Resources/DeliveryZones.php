@@ -10,6 +10,8 @@ class DeliveryZones extends AbstractResource
     /**
      * List all delivery zones
      *
+     * https://postmates.com/developer/docs/endpoints#get_zones
+     *
      * @return mixed
      */
     public function list()

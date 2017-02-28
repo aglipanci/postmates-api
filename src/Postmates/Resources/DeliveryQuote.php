@@ -10,6 +10,8 @@ class DeliveryQuote extends AbstractResource
     /**
      * Get quote for the given pickup and dropoff addresses
      *
+     * https://postmates.com/developer/docs/endpoints#get_quote
+     *
      * @param $pickup_address
      * @param $dropoff_address
      * @return mixed
@@ -18,9 +20,9 @@ class DeliveryQuote extends AbstractResource
     {
 
         $this->setParams([
-                'pickup_address' => $pickup_address,
-                'dropoff_address' => $dropoff_address
-            ]);
+            'pickup_address' => $pickup_address,
+            'dropoff_address' => $dropoff_address
+        ]);
 
         return $this->call('POST');
 

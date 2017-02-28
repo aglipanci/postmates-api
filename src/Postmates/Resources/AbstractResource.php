@@ -8,7 +8,8 @@ use Postmates\PostmatesException;
 /**
  * @package Postmates\Resources
  */
-abstract class AbstractResource {
+abstract class AbstractResource
+{
 
     /**
      * HTTP Client
@@ -59,17 +60,17 @@ abstract class AbstractResource {
             $params = [];
 
             // include params if present
-            if( !empty($this->getParams()) ) {
+            if (!empty($this->getParams())) {
 
-                if($method == 'POST') {
+                if ($method == 'POST') {
 
-                    $params =  [
+                    $params = [
                         'form_params' => $this->getParams()
                     ];
 
                 }
 
-                if($method == 'GET') {
+                if ($method == 'GET') {
 
                     $params = [
                         'query' => $this->getParams()
@@ -90,15 +91,15 @@ abstract class AbstractResource {
 
         $parsed_response = json_decode($response->getBody(), true);
 
-        if($parsed_response === null) {
+        if ($parsed_response === null) {
 
             throw new PostmatesException('Empty body response.');
 
         }
 
-        if(is_array($parsed_response) && isset($parsed_response['kind']) && $parsed_response['kind'] == 'error') {
+        if (is_array($parsed_response) && isset($parsed_response['kind']) && $parsed_response['kind'] == 'error') {
 
-            if($parsed_response['code'] == 'invalid_params') {
+            if ($parsed_response['code'] == 'invalid_params') {
 
                 throw new PostmatesException($parsed_response['message'], 0, null, $parsed_response['params']);
 

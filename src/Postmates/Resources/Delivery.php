@@ -8,8 +8,9 @@ class Delivery extends AbstractResource
     protected $endpoint = 'customers/[customer_id]/deliveries';
 
     /**
-     *
      * Create a new delivery
+     *
+     * https://postmates.com/developer/docs/endpoints#create_delivery
      *
      * @param array $delivery_params
      * @return mixed
@@ -22,8 +23,9 @@ class Delivery extends AbstractResource
     }
 
     /**
-     *
      * Get all deliveries
+     *
+     * https://postmates.com/developer/docs/endpoints#list_deliveries
      *
      * @param string $filter
      * @return mixed
@@ -39,8 +41,9 @@ class Delivery extends AbstractResource
     }
 
     /**
-     *
      * Get a delivery by id
+     *
+     * https://postmates.com/developer/docs/endpoints#get_delivery
      *
      * @param string $delivery_id
      * @return mixed
@@ -55,8 +58,9 @@ class Delivery extends AbstractResource
     }
 
     /**
-     *
      * Cancel a delivery
+     *
+     * https://postmates.com/developer/docs/endpoints#cancel_delivery
      *
      * @param string $delivery_id
      * @return mixed
@@ -71,8 +75,9 @@ class Delivery extends AbstractResource
     }
 
     /**
-     *
      * Add tip to a delivery
+     *
+     * https://postmates.com/developer/docs/endpoints#tip_delivery
      *
      * @param string $delivery_id
      * @param int $amount_in_cents

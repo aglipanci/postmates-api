@@ -41,14 +41,14 @@ class PostmatesClient
     {
 
         $this->config = array_merge(
-              [
-                  'customer_id' => '',
-                  'api_key' => '',
-                  'postmates_version' => '',
-                  'base_path' => self::API_BASE_PATH,
-                  'api_version' => self::API_VERSION
+            [
+                'customer_id' => '',
+                'api_key' => '',
+                'postmates_version' => '',
+                'base_path' => self::API_BASE_PATH,
+                'api_version' => self::API_VERSION
 
-              ],
+            ],
             $config
         );
 
@@ -66,7 +66,7 @@ class PostmatesClient
             $options = ['exceptions' => false];
             $options['base_uri'] = $this->config['base_path'] . $this->config['api_version'] . '/';
 
-            if(!empty($this->config['postmates_version']))
+            if (!empty($this->config['postmates_version']))
                 $options['headers'] = ['X-Postmates-Version' => $this->config['postmates_version']];
 
             $options['auth'] = [$this->config['api_key'], ''];

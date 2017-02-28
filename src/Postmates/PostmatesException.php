@@ -28,7 +28,7 @@ class PostmatesException extends \Exception
     {
         parent::__construct($message, $code, $previous);
 
-        if( !empty($invalid_params) ) {
+        if (!empty($invalid_params)) {
 
             $this->invalid_params = $invalid_params;
 
