@@ -1,6 +1,7 @@
 {
   "name": "aglipanci/postmates-api",
   "description": "Postmates API Client for PHP",
+  "license": "MIT",
   "keywords": [
     "postmates",
     "api-client"
