@@ -64,4 +64,17 @@ class PostmatesResourcesTest extends PHPUnit_Framework_TestCase
 
     }
 
+    public function testGetADelivery()
+    {
+
+        $delivery = new Delivery($this->_postmates_client);
+
+        $delivery_response = $delivery->get('del_LAPCo_EAxDv6z-');
+
+        $this->assertArrayHasKey('id', $delivery_response);
+        $this->assertEquals('del_LAPCo_EAxDv6z-', $delivery_response['id']);
+
+    }
+
+
 }
