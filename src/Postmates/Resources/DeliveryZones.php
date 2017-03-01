@@ -16,6 +16,9 @@ class DeliveryZones extends AbstractResource
      */
     public function list()
     {
-        return $this->call('GET');
+        return $this
+            ->setMethod('GET')
+            ->send();
+
     }
 }

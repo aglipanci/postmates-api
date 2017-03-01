@@ -17,9 +17,10 @@ class Delivery extends AbstractResource
      */
     public function create(array $delivery_params = [])
     {
-        $this->setParams($delivery_params);
-
-        return $this->call('POST');
+        return $this
+            ->setMethod('POST')
+            ->setParams($delivery_params)
+            ->send();
 
     }
 
@@ -33,11 +34,12 @@ class Delivery extends AbstractResource
      */
     public function list(string $filter = '')
     {
-        $this->setParams([
-            'filter' => $filter
-        ]);
-
-        return $this->call('GET');
+        return $this
+            ->setMethod('GET')
+            ->setParams([
+                'filter' => $filter
+            ])
+            ->send();
 
     }
 
@@ -52,9 +54,10 @@ class Delivery extends AbstractResource
     public function get(string $delivery_id)
     {
 
-        $this->setEndpoint($this->getEndpoint() . '/' . $delivery_id);
-
-        return $this->call('GET');
+        return $this
+            ->setEndpoint($this->getEndpoint() . '/' . $delivery_id)
+            ->setMethod('GET')
+            ->send();
 
     }
 
@@ -69,9 +72,10 @@ class Delivery extends AbstractResource
     public function cancel(string $delivery_id)
     {
 
-        $this->setEndpoint($this->getEndpoint() . '/' . $delivery_id . '/cancel');
-
-        return $this->call('POST');
+        return $this
+            ->setEndpoint($this->getEndpoint() . '/' . $delivery_id . '/cancel')
+            ->setMethod('POST')
+            ->send();
 
     }
 
@@ -87,13 +91,13 @@ class Delivery extends AbstractResource
     public function addTip(string $delivery_id, int $amount_in_cents)
     {
 
-        $this->setEndpoint($this->getEndpoint() . '/' . $delivery_id);
-
-        $this->setParams([
-            'tip_by_customer' => $amount_in_cents
-        ]);
-
-        return $this->call('POST');
+        return $this
+            ->setEndpoint($this->getEndpoint() . '/' . $delivery_id)
+            ->setMethod('POST')
+            ->setParams([
+                'tip_by_customer' => $amount_in_cents
+            ])
+            ->send();
 
     }
 

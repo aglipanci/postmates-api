@@ -19,12 +19,13 @@ class DeliveryQuote extends AbstractResource
     public function getQuote($pickup_address, $dropoff_address)
     {
 
-        $this->setParams([
-            'pickup_address' => $pickup_address,
-            'dropoff_address' => $dropoff_address
-        ]);
-
-        return $this->call('POST');
+        return $this
+            ->setMethod('POST')
+            ->setParams([
+                'pickup_address' => $pickup_address,
+                'dropoff_address' => $dropoff_address
+            ])
+            ->send();
 
     }
 

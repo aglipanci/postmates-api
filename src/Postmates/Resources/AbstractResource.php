@@ -26,6 +26,13 @@ abstract class AbstractResource
     protected $endpoint;
 
     /**
+     * Request method
+     *
+     * @var
+     */
+    protected $method;
+
+    /**
      * Request parameters
      *
      * @var array
@@ -46,11 +53,10 @@ abstract class AbstractResource
     /**
      * Handle API Calls
      *
-     * @param $method
      * @return mixed
      * @throws PostmatesException
      */
-    protected function call($method)
+    protected function send()
     {
         try {
 
@@ -62,7 +68,7 @@ abstract class AbstractResource
             // include params if present
             if (!empty($this->getParams())) {
 
-                if ($method == 'POST') {
+                if ($this->getMethod() == 'POST') {
 
                     $params = [
                         'form_params' => $this->getParams()
@@ -70,7 +76,7 @@ abstract class AbstractResource
 
                 }
 
-                if ($method == 'GET') {
+                if ($this->getMethod() == 'GET') {
 
                     $params = [
                         'query' => $this->getParams()
@@ -80,7 +86,7 @@ abstract class AbstractResource
 
             }
 
-            $response = $this->client->getHttpClient()->request($method, $this->getEndpoint(), $params);
+            $response = $this->client->getHttpClient()->request($this->getMethod(), $this->getEndpoint(), $params);
 
 
         } catch (\Exception $e) {
@@ -123,10 +129,14 @@ abstract class AbstractResource
 
     /**
      * @param string $endpoint
+     *
+     * @return AbstractResource
      */
     protected function setEndpoint(string $endpoint)
     {
         $this->endpoint = $endpoint;
+
+        return $this;
     }
 
     /**
@@ -138,11 +148,35 @@ abstract class AbstractResource
     }
 
     /**
+     * @return mixed
+     */
+    public function getMethod()
+    {
+        return $this->method;
+    }
+
+    /**
+     * @param mixed $method
+     *
+     * @return AbstractResource
+     */
+    public function setMethod($method)
+    {
+        $this->method = $method;
+
+        return $this;
+    }
+
+    /**
      * @param array $params
+     *
+     * @return AbstractResource
      */
     public function setParams(array $params)
     {
         $this->params = $params;
+
+        return $this;
     }
 
 
