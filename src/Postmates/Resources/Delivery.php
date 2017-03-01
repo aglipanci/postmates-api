@@ -17,8 +17,9 @@ class Delivery extends AbstractResource
      */
     public function create(array $delivery_params = [])
     {
+        $this->setParams($delivery_params);
 
-        return $this->call('POST', $delivery_params);
+        return $this->call('POST');
 
     }
 
