@@ -65,7 +65,7 @@ $delivery->create($params);
 
 ```php
 $delivery = new Postmates\Resources\Delivery($client);
-$delivery->list();
+$delivery->listDeliveries();
 ```
 
 [https://postmates.com/developer/docs/endpoints#list_deliveries](https://postmates.com/developer/docs/endpoints#list_deliveries)
