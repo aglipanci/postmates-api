@@ -26,7 +26,7 @@ class PostmatesResourcesTest extends PHPUnit_Framework_TestCase
     {
         $zones = new DeliveryZones($this->_postmates_client);
 
-        foreach ($zones->list() as $zone) {
+        foreach ($zones->get() as $zone) {
 
             $this->assertArrayHasKey('type', $zone);
 
