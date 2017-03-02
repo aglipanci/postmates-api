@@ -1,4 +1,5 @@
 # PHP API Client for Postmates
+[![Build Status](https://travis-ci.org/aglipanci/postmates-api.svg?branch=master)](https://travis-ci.org/aglipanci/postmates-api)
 
 A PHP client for consuming the Postmates API.
 
