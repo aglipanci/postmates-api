@@ -32,7 +32,7 @@ class Delivery extends AbstractResource
      * @param string $filter
      * @return mixed
      */
-    public function listDeliveries(string $filter = '')
+    public function listDeliveries($filter = '')
     {
         return $this
             ->setMethod('GET')
