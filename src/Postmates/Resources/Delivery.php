@@ -69,7 +69,7 @@ class Delivery extends AbstractResource
      * @param string $delivery_id
      * @return mixed
      */
-    public function cancel(\string $delivery_id)
+    public function cancel($delivery_id)
     {
 
         return $this
@@ -88,7 +88,7 @@ class Delivery extends AbstractResource
      * @param int $amount_in_cents
      * @return mixed
      */
-    public function addTip(\string $delivery_id, \int $amount_in_cents)
+    public function addTip($delivery_id, $amount_in_cents)
     {
 
         return $this

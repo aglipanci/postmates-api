@@ -132,7 +132,7 @@ abstract class AbstractResource
      *
      * @return AbstractResource
      */
-    protected function setEndpoint(\string $endpoint)
+    protected function setEndpoint($endpoint)
     {
         $this->endpoint = $endpoint;
 
@@ -172,7 +172,7 @@ abstract class AbstractResource
      *
      * @return AbstractResource
      */
-    public function setParams(array $params)
+    public function setParams($params)
     {
         $this->params = $params;
 
