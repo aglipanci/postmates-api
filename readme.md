@@ -36,7 +36,7 @@ $delivery_quote->getQuote('501-525 Brannan St, San Francisco, CA 94107', '6 Coli
 
 ```php
 $delivery_zones = new Postmates\Resources\DeliveryZones($client);
-$delivery_zones->get();
+$delivery_zones->listZones();
 ```
 
 [https://postmates.com/developer/docs/endpoints#get_zones](https://postmates.com/developer/docs/endpoints#get_zones)
