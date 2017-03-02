@@ -51,7 +51,7 @@ class Delivery extends AbstractResource
      * @param string $delivery_id
      * @return mixed
      */
-    public function get(\string $delivery_id)
+    public function get($delivery_id)
     {
 
         return $this
