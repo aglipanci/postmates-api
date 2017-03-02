@@ -16,7 +16,7 @@ class DeliveryQuote extends AbstractResource
      * @param $dropoff_address
      * @return mixed
      */
-    public function getQuote($pickup_address, $dropoff_address)
+    public function getQuote(\string $pickup_address, \string $dropoff_address)
     {
 
         return $this

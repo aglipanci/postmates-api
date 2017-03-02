@@ -7,7 +7,7 @@ class PostmatesWebHook
 
     protected $signature_secret;
 
-    public function __construct(string $signature_secret = '')
+    public function __construct(\string $signature_secret = '')
     {
         $this->signature_secret = $signature_secret;
     }

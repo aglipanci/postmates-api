@@ -132,7 +132,7 @@ abstract class AbstractResource
      *
      * @return AbstractResource
      */
-    protected function setEndpoint(string $endpoint)
+    protected function setEndpoint(\string $endpoint)
     {
         $this->endpoint = $endpoint;
 
