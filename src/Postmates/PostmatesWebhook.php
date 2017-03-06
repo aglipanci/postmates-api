@@ -2,7 +2,7 @@
 
 namespace Postmates;
 
-class PostmatesWebHook
+class PostmatesWebhook
 {
 
     protected $signature_secret;
