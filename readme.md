@@ -104,10 +104,18 @@ $delivery->addTip('del_LAPCo_EAxDv6a-', 1000); // amount in cents
 ```php
 $webhook = new Postmates\PostmatesWebHook('signature_secret_key');
 $webhook_request = $webhook->parseRequest() // this will validate and return the webhook request
+
+if($webhook_request['kind'] == Delivery::EVENT_DELIVERY_STATUS) {
+    //this is a delivery status event
+}
+
+if($webhook_request['kind'] == Delivery::EVENT_COURIER_UPDATE) {
+    //this is a courrier update event
+}
 ```
 if you want to just validate the request but handing it on your own:
 ```php
-$webhook = new Postmates\PostmatesWebHook('signature_secret_key');
+$webhook = new Postmates\PostmatesWebhook('signature_secret_key');
 $webhook_request_is_valid = $webhook->validateRequest($payload, $key)
 ```
 

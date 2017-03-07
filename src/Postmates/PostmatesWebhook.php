@@ -4,9 +4,15 @@ namespace Postmates;
 
 class PostmatesWebhook
 {
-
+    /**
+     * @var string
+     */
     protected $signature_secret;
 
+    /**
+     * PostmatesWebhook constructor.
+     * @param string $signature_secret
+     */
     public function __construct( $signature_secret = '' )
     {
         $this->signature_secret = $signature_secret;

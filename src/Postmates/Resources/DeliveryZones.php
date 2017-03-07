@@ -5,6 +5,11 @@ namespace Postmates\Resources;
 
 class DeliveryZones extends AbstractResource
 {
+    /**
+     * Base endpoint for Delivery Quote
+     *
+     * @var string
+     */
     protected $endpoint = 'delivery_zones';
 
     /**

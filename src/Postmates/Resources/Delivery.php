@@ -4,7 +4,41 @@ namespace Postmates\Resources;
 
 class Delivery extends AbstractResource
 {
+    /**
+     * Delivery Status Event Type
+     */
+    const EVENT_DELIVERY_STATUS = 'event.delivery_status';
 
+    /**
+     * Courier Update Event Type
+     */
+    const EVENT_COURIER_UPDATE = 'event.courier_update';
+
+    /**
+     * Pickup is being happening status
+     */
+    const STATUS_PICKUP = 'pickup';
+
+    /**
+     * Pickup has been completed status
+     */
+    const STATUS_PICKUP_COMPLETE = 'pickup_complete';
+
+    /**
+     * Dropoff is being happening status
+     */
+    const STATUS_DROPOFF = 'dropoff';
+
+    /**
+     * Delivery has been completed status
+     */
+    const STATUS_DELIVERED = 'delivered';
+
+    /**
+     * Base endpoint for Deliveries
+     *
+     * @var string
+     */
     protected $endpoint = 'customers/[customer_id]/deliveries';
 
     /**
