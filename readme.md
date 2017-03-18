@@ -159,6 +159,11 @@ $ ./vendor/bin/phpunit
 
 [Agli Panci](https://github.com/aglipanci)
 
+
+## WooCommerce Integration
+
+[WooCommerce Postmates Integration Plugin](https://wordpress.org/plugins/woo-postmates-integration/)
+
 ## License
 
 The [MIT License](https://opensource.org/licenses/MIT) (MIT).
