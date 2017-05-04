@@ -102,7 +102,7 @@ $delivery->addTip('del_LAPCo_EAxDv6a-', 1000); // amount in cents
 ### Handing WebHooks
 
 ```php
-$webhook = new Postmates\PostmatesWebHook('signature_secret_key');
+$webhook = new Postmates\PostmatesWebhook('signature_secret_key');
 $webhook_request = $webhook->parseRequest() // this will validate and return the webhook request
 
 if($webhook_request['kind'] == Delivery::EVENT_DELIVERY_STATUS) {
