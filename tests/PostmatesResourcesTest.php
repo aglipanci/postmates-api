@@ -8,8 +8,8 @@ use Postmates\Resources\Delivery;
 class PostmatesResourcesTest extends PHPUnit_Framework_TestCase
 {
 
-    CONST CUSTOMER_ID = 'cus_Kw0Lcp8JBz7dC-';
-    CONST API_KEY = '4472e74a-f0e6-4ac8-9968-e3d1b3d7f50a';
+    CONST CUSTOMER_ID = 'CUSTOMER_ID';
+    CONST API_KEY = 'API_KEY';
 
     private $_postmates_client;
 
