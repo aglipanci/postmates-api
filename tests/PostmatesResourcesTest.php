@@ -7,17 +7,14 @@ use Postmates\Resources\Delivery;
 
 class PostmatesResourcesTest extends PHPUnit_Framework_TestCase
 {
-
-    CONST CUSTOMER_ID = 'CUSTOMER_ID';
-    CONST API_KEY = 'API_KEY';
-
+    
     private $_postmates_client;
 
     protected function setUp()
     {
         $this->_postmates_client = new PostmatesClient([
-            'customer_id' => self::CUSTOMER_ID,
-            'api_key' => self::API_KEY
+            'customer_id' => getenv('CUSTOMER_ID'),
+            'api_key' => getenv('API_KEY')
         ]);
 
     }
